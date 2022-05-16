@@ -3,7 +3,9 @@ import PostPreview from "../PostPreview";
 
 const AllPosts = ({ posts }) => {
   const renderPostPreviews = () =>
-    posts.map((post) => <PostPreview key={post.id} post={post.attributes} />);
+    posts.map((post) => (
+      <PostPreview key={post.id} post={post.attributes} id={post.id} />
+    ));
 
   return (
     <>

@@ -1,11 +1,14 @@
 import styles from "./post.module.scss";
+import Link from "next/link";
 
-const PostPreview = ({ post }) => {
+const PostPreview = ({ id, post }) => {
   return (
-    <div className={styles.post}>
-      <h3>{post.title}</h3>
-      <p>{post.description}</p>
-    </div>
+    <Link href={`/posts/${id}`}>
+      <div className={styles.post}>
+        <h3>{post.title}</h3>
+        <p>{post.description}</p>
+      </div>
+    </Link>
   );
 };
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import PostsList from "../components/PostsList";
+import PostsList from "../../components/PostsList";
 const Posts = ({ posts }) => {
   return (
     <>
