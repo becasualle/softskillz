@@ -8,7 +8,7 @@ export default function Home({ posts }) {
   const [latestPosts, setLatestPosts] = useState([]);
 
   useEffect(() => {
-    setLatestPosts(posts.slice(0, 5));
+    setLatestPosts(posts.slice(0, 3));
   }, [posts]);
 
   return (
