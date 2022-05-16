@@ -1,11 +1,14 @@
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
+import HomeHeader from "../components/HomeHeader";
+import HomeLatestPosts from "../components/HomeLatestPosts";
 
 export default function Home({ posts }) {
   return (
     <>
-      <h1>{posts[1].attributes.title}</h1>
+      <HomeHeader />
+      <HomeLatestPosts posts={posts} />
     </>
   );
 }
