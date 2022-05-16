@@ -10,7 +10,8 @@ const PostPage = ({ post }) => {
     <article>
       <header>
         <h1>{title}</h1>
-        <h2>{description}</h2>
+
+        <em>{description}</em>
       </header>
       <section dangerouslySetInnerHTML={{ __html: htmlContent }} />
     </article>
