@@ -1,10 +1,9 @@
 import axios from "axios";
-import AllPosts from "../components/AllPosts";
+import PostsList from "../components/PostsList";
 const Posts = ({ posts }) => {
-  console.log({ posts });
   return (
     <>
-      <AllPosts posts={posts} />
+      <PostsList posts={posts} />
     </>
   );
 };

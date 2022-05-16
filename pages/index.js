@@ -1,14 +1,20 @@
 import axios from "axios";
-import Head from "next/head";
-import Image from "next/image";
 import HomeHeader from "../components/HomeHeader";
-import HomeLatestPosts from "../components/HomeLatestPosts";
+
+import { useEffect, useState } from "react";
+import PostsList from "../components/PostsList";
 
 export default function Home({ posts }) {
+  const [latestPosts, setLatestPosts] = useState([]);
+
+  useEffect(() => {
+    setLatestPosts(posts.slice(0, 5));
+  }, [posts]);
+
   return (
     <>
       <HomeHeader />
-      <HomeLatestPosts posts={posts} />
+      <PostsList posts={latestPosts} />
     </>
   );
 }
