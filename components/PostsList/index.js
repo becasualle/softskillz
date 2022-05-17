@@ -9,7 +9,7 @@ const AllPosts = ({ posts }) => {
 
   return (
     <>
-      <h2>Posts</h2>
+      <h2>Посты</h2>
       {renderPostPreviews()}
     </>
   );

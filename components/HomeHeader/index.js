@@ -1,12 +1,8 @@
 const HomeHeader = () => {
   return (
     <header>
-      <h1>Main blog</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci
-        blanditiis dicta optio accusantium quas eveniet aliquid quam ratione
-        voluptate consequuntur.
-      </p>
+      <h1>Блог Марка Нелюбина</h1>
+      <p>Про разработку цифровых продуктов и не только</p>
     </header>
   );
 };

@@ -6,13 +6,13 @@ const Navbar = () => {
       <div className="container">
         <div className={styles.navContainer}>
           <Link href="/">
-            <a className={styles.title}>Main</a>
+            <a className={styles.title}>Блог</a>
           </Link>
 
           <ul>
             <li>
               <Link href="/posts">
-                <a className={styles.link}>All posts</a>
+                <a className={styles.link}>Все посты</a>
               </Link>
             </li>
           </ul>
