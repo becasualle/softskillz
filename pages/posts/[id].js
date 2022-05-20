@@ -4,8 +4,9 @@ import { API_URL } from "../../utils/urls";
 
 const PostPage = ({ post }) => {
   const md = new MarkdownIt();
-  const { title, description, content } = post.attributes;
-  const htmlContent = md.render(content);
+  console.log(post.attributes);
+  const { title, description, text } = post.attributes;
+  const htmlContent = md.render(text);
   return (
     <article>
       <header>
@@ -21,7 +22,7 @@ const PostPage = ({ post }) => {
 export default PostPage;
 
 export async function getStaticPaths() {
-  const postsRes = await axios.get(`${API_URL}/api/posts-plural/`);
+  const postsRes = await axios.get(`${API_URL}/api/courses/`);
   const posts = postsRes.data.data;
   const paths = posts.map((post) => {
     return {
@@ -39,7 +40,7 @@ export async function getStaticPaths() {
 
 // get params object from getStaticPaths
 export async function getStaticProps({ params }) {
-  const postsRes = await axios.get(`${API_URL}/api/posts-plural/${params.id}`);
+  const postsRes = await axios.get(`${API_URL}/api/courses/${params.id}`);
 
   return {
     props: {

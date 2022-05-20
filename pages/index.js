@@ -21,7 +21,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const postsRes = await axios.get(`${API_URL}/api/posts-plural/`);
+  const postsRes = await axios.get(`${API_URL}/api/courses/`);
   // console.log(`${API_URL}/api/posts-plural/`);
   const posts = postsRes.data.data;
 

@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import PostPreview from "../PostPreview";
 
 const AllPosts = ({ posts }) => {
