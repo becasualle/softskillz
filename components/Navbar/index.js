@@ -1,9 +1,10 @@
 import Link from "next/link";
 import styles from "./navbar.module.scss";
+import { Container } from "react-bootstrap";
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <div className="container">
+      <Container>
         <div className={styles.navContainer}>
           <Link href="/">
             <a className={styles.title}>Блог</a>
@@ -17,7 +18,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </Container>
     </nav>
   );
 };
