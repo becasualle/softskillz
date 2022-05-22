@@ -1,9 +1,9 @@
 import axios from "axios";
 import HomeHeader from "../components/HomeHeader";
 import { API_URL } from "../utils/urls";
-
 import { useEffect, useState } from "react";
 import PostsList from "../components/PostsList";
+import Button from "react-bootstrap/Button";
 
 export default function Home({ posts }) {
   const [latestPosts, setLatestPosts] = useState([]);
