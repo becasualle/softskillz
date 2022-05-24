@@ -1,19 +1,25 @@
 import axios from "axios";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const RegisterComp = () => {
-  const [userData, setUserData] = useState({
+  const router = useRouter();
+  const defaultData = {
     username: "",
     email: "",
     password: "",
-  });
+  };
+  const [userData, setUserData] = useState(defaultData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post("api/register", userData);
-      router.replace("/profile");
+      setUserData(defaultData);
+      router.replace("/posts");
     } catch (error) {
+      // TODO: передавать ошибку в виде snackbar/toasts
+      // from API we get error.response.data.error.message (stapi msg) with 400 status
       console.log(error.response.data);
     }
   };
@@ -27,15 +33,30 @@ const RegisterComp = () => {
     <form onSubmit={handleSubmit}>
       <label>
         Username:
-        <input type="text" name="username" onChange={handleChange} />
+        <input
+          type="text"
+          name="username"
+          onChange={handleChange}
+          value={userData.username}
+        />
       </label>
       <label>
-        Emal:
-        <input type="email" name="email" onChange={handleChange} />
+        Email:
+        <input
+          type="email"
+          name="email"
+          onChange={handleChange}
+          value={userData.email}
+        />
       </label>
       <label>
         Password:
-        <input type="password" name="password" onChange={handleChange} />
+        <input
+          type="password"
+          name="password"
+          onChange={handleChange}
+          value={userData.password}
+        />
       </label>
       <button>Submit</button>
     </form>
