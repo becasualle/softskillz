@@ -39,6 +39,7 @@ export const getServerSideProps = async (context) => {
 
   if (cookies?.jwt) {
     try {
+      console.log({ user });
       const { data } = await axios.get("http://localhost:1337/api/users/me", {
         headers: {
           Authorization: `Bearer ${cookies.jwt}`,
@@ -48,15 +49,15 @@ export const getServerSideProps = async (context) => {
     } catch (error) {
       console.log(error);
     }
+  }
 
-    if (!user) {
-      return {
-        redirect: {
-          permanent: false,
-          destination: "/",
-        },
-      };
-    }
+  if (!user) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/",
+      },
+    };
   }
 
   return { props: { user } };

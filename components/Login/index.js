@@ -17,12 +17,11 @@ const Login = () => {
       await axios.post("/api/login", { ...userData });
       router.push("/profile");
     } catch (error) {
-      console.log(error.response.data);
+      console.log(error);
     }
   };
 
   const handleChange = (e) => {
-    console.log(e.target);
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
@@ -38,7 +37,7 @@ const Login = () => {
           Password:
           <input type="password" name="password" onChange={handleChange} />
         </label>
-        <button> Submit </button>
+        <button> Логин </button>
       </form>
     </div>
   );
