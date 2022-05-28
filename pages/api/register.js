@@ -1,19 +1,17 @@
 import axios from "axios";
 import { setCookie } from "nookies";
+import { API_URL } from "../../utils/urls";
 
 const register = async (req, res) => {
   const { username, password, email } = req.body;
 
   try {
     // TODO: заменить на API_URL
-    const response = await axios.post(
-      "http://localhost:1337/api/auth/local/register",
-      {
-        username,
-        email,
-        password,
-      }
-    );
+    const response = await axios.post(`${API_URL}/api/auth/local/register`, {
+      username,
+      email,
+      password,
+    });
     // The response returned from the POST request contains a JWT token.
     // This token is specific to that user and should be stored securely in order to automatically authenticate the user.
     setCookie({ res }, "jwt", response.data.jwt, {

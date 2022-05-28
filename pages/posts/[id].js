@@ -4,7 +4,6 @@ import { API_URL } from "../../utils/urls";
 
 const PostPage = ({ post }) => {
   const md = new MarkdownIt();
-  console.log(post.attributes);
   const { title, description, text } = post.attributes;
   const htmlContent = md.render(text);
   return (
