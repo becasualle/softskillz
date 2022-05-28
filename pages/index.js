@@ -5,17 +5,19 @@ import { useEffect, useState } from "react";
 import PostsList from "../components/PostsList";
 import RegisterComp from "../components/RegisterComp";
 import { useRouter } from "next/router";
-import { Button } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
+import Image from "next/image";
 import Login from "../components/Login";
 import nookies from "nookies";
+import styles from "./index.module.scss";
 
 export default function Home() {
   // const [latestPosts, setLatestPosts] = useState([]);
   const router = useRouter();
 
-  const goToRegister = () => {
-    router.push("/register");
-  };
+  // const goToRegister = () => {
+  //   router.push("/register");
+  // };
 
   // useEffect(() => {
   //   setLatestPosts(posts.slice(0, 3));
@@ -23,12 +25,34 @@ export default function Home() {
 
   return (
     <>
-      {/* <HomeHeader />
-      <PostsList posts={latestPosts} /> */}
-      <Login />
-      <Button variant="dark" onClick={goToRegister}>
-        Зарегистрируйтесь
-      </Button>
+      <Row
+        className={[
+          styles.hero,
+          "d-flex flex-row-reverse align-items-center g-5",
+        ].join(" ")}
+      >
+        <Col lg={6}>
+          <img
+            src="/bootstrap-themes.png"
+            alt=""
+            className="d-block mx-lg-auto img-fluid"
+          />
+        </Col>
+        <Col lg={6}>
+          <h1 className="display-5 fw-bold lh-1 mb-3">
+            Responsive left-aligned hero with image
+          </h1>
+          <p>
+            Quickly design and customize responsive mobile-first sites with
+            Bootstrap, the world’s most popular front-end open source toolkit,
+            featuring Sass variables and mixins, responsive grid system,
+            extensive prebuilt components, and powerful JavaScript plugins.
+          </p>
+          <div>
+            <Button>Зарегистрироваться</Button>
+          </div>
+        </Col>
+      </Row>
     </>
   );
 }
