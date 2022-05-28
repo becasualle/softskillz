@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import nookies from "nookies";
+import { API_URL } from "../utils/urls";
 
 const Profile = (props) => {
   const router = useRouter();
@@ -39,8 +40,7 @@ export const getServerSideProps = async (context) => {
 
   if (cookies?.jwt) {
     try {
-      console.log({ user });
-      const { data } = await axios.get("http://localhost:1337/api/users/me", {
+      const { data } = await axios.get(`${API_URL}/api/users/me`, {
         headers: {
           Authorization: `Bearer ${cookies.jwt}`,
         },

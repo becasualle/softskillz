@@ -1,11 +1,12 @@
 import axios from "axios";
 import { setCookie } from "nookies";
+import { API_URL } from "../../utils/urls";
 
 const login = async (req, res) => {
   const { identifier, password } = req.body;
   try {
     // Send user input from login component to Strapi endpoint to log a user in
-    const postRes = await axios.post("http://localhost:1337/api/auth/local", {
+    const postRes = await axios.post(`${API_URL}/api/auth/local`, {
       identifier,
       password,
     });

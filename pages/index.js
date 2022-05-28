@@ -41,7 +41,7 @@ export async function getServerSideProps(context) {
 
   if (cookies?.jwt) {
     try {
-      const { data } = await axios.get("http://localhost:1337/api/users/me", {
+      const { data } = await axios.get(`${API_URL}/api/users/me`, {
         headers: {
           Authorization: `Bearer ${cookies.jwt}`,
         },
