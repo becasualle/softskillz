@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const PostPreview = ({ id, post }) => {
   return (
-    <Link href={`/posts/${id}`}>
+    <Link href={`/courses/${id}`}>
       <div className={styles.post}>
         <h3>{post.title}</h3>
         <p>{post.description}</p>

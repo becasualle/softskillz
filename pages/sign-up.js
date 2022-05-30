@@ -1,7 +1,7 @@
 import RegisterComp from "../components/RegisterComp";
 
-const Register = () => {
+const SignUp = () => {
   return <RegisterComp />;
 };
 
-export default Register;
+export default SignUp;

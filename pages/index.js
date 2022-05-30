@@ -5,30 +5,54 @@ import { useEffect, useState } from "react";
 import PostsList from "../components/PostsList";
 import RegisterComp from "../components/RegisterComp";
 import { useRouter } from "next/router";
-import { Button } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
+import Image from "next/image";
 import Login from "../components/Login";
 import nookies from "nookies";
+import styles from "./index.module.scss";
 
 export default function Home() {
-  // const [latestPosts, setLatestPosts] = useState([]);
   const router = useRouter();
 
   const goToRegister = () => {
-    router.push("/register");
+    router.push("/sign-up");
   };
-
-  // useEffect(() => {
-  //   setLatestPosts(posts.slice(0, 3));
-  // }, [posts]);
 
   return (
     <>
-      {/* <HomeHeader />
-      <PostsList posts={latestPosts} /> */}
-      <Login />
-      <Button variant="dark" onClick={goToRegister}>
-        Зарегистрируйтесь
-      </Button>
+      <Row
+        className={[
+          styles.hero,
+          "d-flex flex-row-reverse align-items-center g-5",
+        ].join(" ")}
+      >
+        <Col lg={6}>
+          <img
+            src="/bootstrap-themes.png"
+            alt=""
+            className="d-block mx-lg-auto img-fluid"
+          />
+        </Col>
+        <Col
+          lg={6}
+          className="d-flex flex-column align-items-center d-lg-block"
+        >
+          <h1 className="display-5 fw-bold lh-1 mb-3 text-center text-lg-start">
+            Станьте лучшей версией себя
+          </h1>
+          <p className="lead text-center text-lg-start">
+            Развивайте мягкие навыки с помощью курсов и практических упражнений
+            на платформе SoftSkillz. Замечайте позитивные изменения во всех
+            сферах жизни.{" "}
+            <span className="fw-bold">
+              Учитесь бесплатно, попробуйте прямо сейчас.
+            </span>
+          </p>
+          <div className="d-flex flex-row align-items-center text-lg-start">
+            <Button onClick={goToRegister}>Зарегистрироваться</Button>
+          </div>
+        </Col>
+      </Row>
     </>
   );
 }
