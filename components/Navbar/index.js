@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./navbar.module.scss";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Button, Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 const Navheader = () => {
   return (
     // <nav className={styles.navbar}>
@@ -25,14 +25,23 @@ const Navheader = () => {
         <Link href="/">
           <Navbar.Brand href="/">SoftSkillz</Navbar.Brand>
         </Link>
-
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link href="/courses">
               <Nav.Link href="/courses">Курсы</Nav.Link>
             </Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Link href="/profile">
+              <Nav.Link href="/profile">Профиль</Nav.Link>
+            </Link>
+            <Link href="/sign-in">
+              <Nav.Link href="/sign-in">Логин</Nav.Link>
+            </Link>
+            <Link href="/sign-up">
+              <Button variant="outline-primary" className="w-fit-content">
+                Регистрация
+              </Button>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -33,17 +33,22 @@ export default function Home() {
             className="d-block mx-lg-auto img-fluid"
           />
         </Col>
-        <Col lg={6}>
-          <h1 className="display-5 fw-bold lh-1 mb-3">
+        <Col
+          lg={6}
+          className="d-flex flex-column align-items-center d-lg-block"
+        >
+          <h1 className="display-5 fw-bold lh-1 mb-3 text-center text-lg-start">
             Станьте лучшей версией себя
           </h1>
-          <p className="lead">
+          <p className="lead text-center text-lg-start">
             Развивайте мягкие навыки с помощью курсов и практических упражнений
             на платформе SoftSkillz. Замечайте позитивные изменения во всех
-            сферах жизни.
+            сферах жизни.{" "}
+            <span className="fw-bold">
+              Учитесь бесплатно, попробуйте прямо сейчас.
+            </span>
           </p>
-          <p className="lead">Учитесь бесплатно, попробуйте прямо сейчас.</p>
-          <div>
+          <div className="d-flex flex-row align-items-center text-lg-start">
             <Button onClick={goToRegister}>Зарегистрироваться</Button>
           </div>
         </Col>
