@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter();
 
   const goToRegister = () => {
-    router.push("/register");
+    router.push("/sign-up");
   };
 
   // useEffect(() => {
@@ -42,10 +42,12 @@ export default function Home() {
           <h1 className="display-5 fw-bold lh-1 mb-3">
             Станьте лучшей версией себя
           </h1>
-          <p>
+          <p className="lead">
             Развивайте мягкие навыки с помощью курсов и практических упражнений
-            на платформе SoftSkillz. Учитесь бесплатно, попробуйте прямо сейчас.
+            на платформе SoftSkillz. Замечайте позитивные изменения во всех
+            сферах жизни.
           </p>
+          <p className="lead">Учитесь бесплатно, попробуйте прямо сейчас.</p>
           <div>
             <Button onClick={goToRegister}>Зарегистрироваться</Button>
           </div>
