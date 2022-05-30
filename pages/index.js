@@ -15,9 +15,9 @@ export default function Home() {
   // const [latestPosts, setLatestPosts] = useState([]);
   const router = useRouter();
 
-  // const goToRegister = () => {
-  //   router.push("/register");
-  // };
+  const goToRegister = () => {
+    router.push("/register");
+  };
 
   // useEffect(() => {
   //   setLatestPosts(posts.slice(0, 3));
@@ -40,16 +40,14 @@ export default function Home() {
         </Col>
         <Col lg={6}>
           <h1 className="display-5 fw-bold lh-1 mb-3">
-            Responsive left-aligned hero with image
+            Станьте лучшей версией себя
           </h1>
           <p>
-            Quickly design and customize responsive mobile-first sites with
-            Bootstrap, the world’s most popular front-end open source toolkit,
-            featuring Sass variables and mixins, responsive grid system,
-            extensive prebuilt components, and powerful JavaScript plugins.
+            Развивайте мягкие навыки с помощью курсов и практических упражнений
+            на платформе SoftSkillz. Учитесь бесплатно, попробуйте прямо сейчас.
           </p>
           <div>
-            <Button>Зарегистрироваться</Button>
+            <Button onClick={goToRegister}>Зарегистрироваться</Button>
           </div>
         </Col>
       </Row>

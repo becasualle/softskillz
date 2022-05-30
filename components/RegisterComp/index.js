@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 
 const RegisterComp = () => {
   const router = useRouter();
@@ -30,36 +31,77 @@ const RegisterComp = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
-          type="text"
+    <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBasicUsername">
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
           name="username"
+          type="text"
+          placeholder="Введите имя пользователя"
           onChange={handleChange}
           value={userData.username}
         />
-      </label>
-      <label>
-        Email:
-        <input
-          type="email"
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email:</Form.Label>
+        <Form.Control
           name="email"
+          type="email"
+          placeholder="Укажите ваш email"
           onChange={handleChange}
           value={userData.email}
         />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
+        <Form.Text className="text-muted">
+          Мы никому не передаем ваш email
+        </Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
           name="password"
+          type="password"
+          placeholder="Установите пароль"
           onChange={handleChange}
           value={userData.password}
         />
-      </label>
-      <button>Submit</button>
-    </form>
+        <Form.Text className="text-muted">
+          Пароль должен содержать не менее 6 символов
+        </Form.Text>
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Зарегистрироваться
+      </Button>
+    </Form>
+
+    // <form>
+    //   <label>
+    //     <input
+    //       type="text"
+    //       name="username"
+    //       onChange={handleChange}
+    //       value={userData.username}
+    //     />
+    //   </label>
+    //   <label>
+    //     Email:
+    //     <input
+    //       type="email"
+    //       name="email"
+    //       onChange={handleChange}
+    //       value={userData.email}
+    //     />
+    //   </label>
+    //   <label>
+    //     Password:
+    //     <input
+    //       type="password"
+    //       name="password"
+    //       onChange={handleChange}
+    //       value={userData.password}
+    //     />
+    //   </label>
+    //   <button>Submit</button>
+    // </form>
   );
 };
 
