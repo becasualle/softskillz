@@ -12,16 +12,11 @@ import nookies from "nookies";
 import styles from "./index.module.scss";
 
 export default function Home() {
-  // const [latestPosts, setLatestPosts] = useState([]);
   const router = useRouter();
 
   const goToRegister = () => {
     router.push("/sign-up");
   };
-
-  // useEffect(() => {
-  //   setLatestPosts(posts.slice(0, 3));
-  // }, [posts]);
 
   return (
     <>
