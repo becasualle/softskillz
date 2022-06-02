@@ -19,7 +19,7 @@ const RegisterComp = () => {
     try {
       await axios.post("api/register", userData);
       setUserData(defaultData);
-      router.replace("/courses");
+      router.push("/profile");
     } catch (error) {
       // TODO: передавать ошибку в виде snackbar/toasts
       // from API we get error.response.data.error.message (stapi msg) with 400 status

@@ -31,8 +31,8 @@ const Navheader = () => {
             <Link href="/courses">
               <Nav.Link href="/courses">Курсы</Nav.Link>
             </Link>
-            <Link href="/profile">
-              <Nav.Link href="/profile">Профиль</Nav.Link>
+            <Link href="/cbt-diary">
+              <Nav.Link href="/cbt-diary">Дневник</Nav.Link>
             </Link>
             <Link href="/sign-in">
               <Nav.Link href="/sign-in">Логин</Nav.Link>
