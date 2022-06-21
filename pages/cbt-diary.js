@@ -3,10 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import axios from "axios";
+import nookies, { parseCookies } from "nookies";
 
-const CbtDiary = () => {
+const CbtDiary = (props) => {
   const [note, setNote] = useState({ title: "", description: "" });
   const router = useRouter();
+  // console.log(props);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,5 +57,12 @@ const CbtDiary = () => {
     </div>
   );
 };
+
+// export const getServerSideProps = async (context) => {
+//   const cookies = nookies.get(context);
+//   console.log(context);
+
+//   return { props: { jwt: cookies.jwt } };
+// };
 
 export default CbtDiary;

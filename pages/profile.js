@@ -46,6 +46,7 @@ export const getServerSideProps = async (context) => {
         },
       });
       user = data;
+      console.log(user.content_access.cbt_notes_ids);
     } catch (error) {
       console.log(error);
     }
